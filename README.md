@@ -100,3 +100,24 @@ The total number of tables in the database that was identified to build our syst
    - It not take any help of helper class but it self contains logic to connect DataBase and perform SQL operations 
    - It take JDBC properties and SQL query for select all users from database with the help of **ServletContext** object and **web.xml** configuration file
    
+
+## Helper class 
+1. com.nt.util
+   - SqlQuerySupplier.java
+     - This class is help Login(LoginServlet.java) | Register(RegisterServlet.java) Servlet.
+     - It takes Servlet Context object with help of init() method of Login(LoginServlet.java) servlet and,
+     - Store that Object into Static Refrence Variable of ServletContext Type
+     - Using this ServletContext object this class get all properties of JDBC and SQL queries from web.xml and,
+     - This class have a getQuery(String purpose) method which returns SQL query as String to caller
+2. com.nt.dao
+   - ChatAppLoginDAO.java (Data Access Object)
+     - Basically  this class is develop with feeling as Spring bean class which useful for perform persistent logic
+     - but that need injuctions and injuction will happens with IOC container but i'm develop this application without Spring Framework so there is no IOC container
+     - so there is no dependency injuction without IOC Container and no DataSource injucted that'sWhy there is no chance to get DataSouces object direct but,
+     - DataSource it injucted to Servlet only. [I'm not using DataSource "pooled conection object"]
+     - I use standard approch and work with DriverManager class | to load DataBase driver class and get connection.
+     - But i prefer write one time that JDBC property at single place and use it multiple places 
+     - so i decided to work with web.xml (becuse properties file not working ) and set all JDBC properties into ServletContext obj Parameters.
+     - Servlet context objec is only accessble through servlet only that'swhy i use init() method of LoginServlet.java to give ServletContext obj indirectly to SqlQuerySupplier class. and,
+     - finally ChatAppLoginDAO class get JDBC propertes using ServletContext object Or we can supply properties manually and,
+     - SqlQuerySupplier class give query to perform Operations to ChatAppLoginDAO class
