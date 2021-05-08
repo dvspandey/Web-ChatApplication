@@ -3,7 +3,7 @@
 .
 .
 .
- **It provides client application which runs on the users’ desktop and server application which runs on any machine on the network. To start chatting our client should get connected to a server where they can do group and private chatting.**
+ **It provides client application which runs on the users’ desktop and server application which runs on any machine on the network. To start chatting our client should get connected to a server where they can do private chatting with registered users.**
  
  
 ## Software requirements of the project
@@ -121,3 +121,5 @@ The total number of tables in the database that was identified to build our syst
      - Servlet context objec is only accessble through servlet only that'swhy i use init() method of LoginServlet.java to give ServletContext obj indirectly to SqlQuerySupplier class. and,
      - finally ChatAppLoginDAO class get JDBC propertes using ServletContext object Or we can supply properties manually and,
      - SqlQuerySupplier class give query to perform Operations to ChatAppLoginDAO class
+
+## JSP Files (JAVA SERVER PAGES)
