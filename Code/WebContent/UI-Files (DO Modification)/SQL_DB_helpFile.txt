@@ -1,0 +1,74 @@
+CURRENT_TIMESTAMP
+
+INSERT INTO `CHATAPP_LOGIN` (`EMAIL`, `PASSWORD`, `TIME_STAMP`) VALUES ('user1@gmail.com', 'user1@123', sysdate);
+
+GMT+5:30
+
+SELECT CONVERT_TZ(CURRENT_TIMESTAMP,'GMT','IST');
+
+SELECT CONVERT_TZ(CURRENT_TIMESTAMP,'GMT','+5:30') from dual;
+
+
+SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00')
+SELECT CONVERT_TZ('2021-05-08 4:54:00','+00:00','+05:30')
+
+
+ SELECT DATE_FORMAT(CURRENT_TIMESTAMP, '%Y-%m-%d %h:%i:%s');
+
+
+TimeStamp[IST](remoteMySQL):: 
+==============================
+SELECT CONVERT_TZ(DATE_FORMAT(CURRENT_TIMESTAMP, '%Y-%m-%d %h:%i:%s'),'+00:00','+05:30'); 
+
+
+
+
+
+
+
+
+//************************** SQL QUERY ****************************************
+
+
+
+
+
+#ChatAppLoginDAO
+private static final String NEW_USER_INSERT_QUERY = "INSERT INTO CHATAPP_LOGIN (EMAIL, PASSWORD, TIME_STAMP) VALUES(?,?,sysdate)";
+	private static final String USER_LOGIN_SELECT_QUERY = "SELECT EMAIL, PASSWORD FROM CHATAPP_LOGIN WHERE EMAIL = ?";
+
+
+#ListAllRegisteredUserServlet
+private static final String SELECT_ALL_USER_QUERY = "SELECT EMAIL FROM CHATAPP_LOGIN";
+	
+
+#ShowSavedChatServlet
+private static final String SELECT_USERS_CHAT_QUERY = "select messages, to_char(time_stamp, 'dd-mon-yyyy hh24:mi:ss') as time_stamp, msg_from, msg_to from chatapp_chat where msg_from IN (?, ?) AND msg_to IN (?, ?) ORDER by time_stamp ASC";
+
+
+#StoreChatServlet
+private static final String STORE_USERS_CHAT_QUERY = "INSERT INTO \"ADV_JAVA\".\"CHATAPP_CHAT\" (MESSAGES, time_stamp, MSG_FROM, MSG_TO) VALUES (?, sysdate, ?, ?)";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+body{
+    /* Off User Selection to whole Page -- dvspandey  */
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */ 
+}
+
+
+/***************************************  Profile   ***************************************/
+.profile{
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 60%;
+    width: 300px;
+}
+
+.profile .users{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.users  .user{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.users  .signs{
+    display: flex;
+}
+
+
+
+.signs .sign{
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.user .face {
+    font-size: 5rem;
+    color: aliceblue;
+}
+.user .name{
+    color: rgb(0, 192, 80);
+    font-family: 'Reggae One', cursive;
+}
+/***************************************  Profile END  ***************************************/
+
+
+
+/************************* IFrame CSS  ***************************************/
+iframe{
+    position: relative;
+    height: 530px;
+    width: 380px;
+    padding: 5px;
+    overflow: hidden;
+    border: none;
+ }
+/************************* IFrame CSS End ***************************************/
+
+
+
+
+/************************* Message Send Form CSS  ***************************************/
+.form{ /* Form CSS */
+    margin-top: 550px;
+    left: 71%;
+    position: absolute;
+    overflow-y:hidden;
+    top: 0;
+}
+
+.form form .textBox{
+    height: 30px;
+    border: #5484ff;
+    border-style: double;
+    width: 300px;
+    border-left: none;
+    background-color: #070e1b;
+    border-right: none;
+    border-top: none;
+    margin-right: 8px;
+    color: turquoise;
+    font-size: medium;
+    outline:none;
+    font-family: 'Reggae One', cursive;
+    text-align: center;
+}
+
+.form form .submitButton{
+    border: none;
+    padding: 10px;
+    color: #4c527b;
+    background-color: #070e1b;
+    border-style: solid;
+    border-width: thin;
+    outline:none;
+}
+/************************* Message Send Form CSS End ***************************************/
+
+
+
+/************************* Navigation Buttons ***************************************/
+.linkButton{
+    display: flex;
+    max-height: 20rem;
+    min-height: 20rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.linkButton a{
+    padding: 3px 6px;
+    border: solid;
+    border-width: thin;
+}
+
+.linkButton a:hover{
+    background-color: seashell;
+    color: black !important;
+    font-weight: bold;
+}
+/************************* Navigation Buttons End ***************************************/
+
+
+.vl { /* For Vertical line */
+    border-left: 1px solid #80007f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 600px;
+    overflow-y: hidden;
+    position: absolute;
+    left: 70%;
+    margin-left: -3px;
+    top: 0;
+}

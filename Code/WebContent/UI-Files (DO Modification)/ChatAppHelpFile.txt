@@ -1,0 +1,170 @@
+Deployment in PC to access same internet Connection
+====================================================
+
+Step1: connect pc to internet
+Step2: CMD ---> ipconfig
+IPv4 Address. . . . . . . . . . . : 192.168.43.250
+
+server running on PORT: 3030
+http://192.168.43.250:3030/ChatAppWithDataBase
+
+
+my_IP:: 192.168.43.250
+
+
+
+welcomepage.jsp
+===============
+//from:: loginurl & registerurl
+request.getAttribute("jspResponseFor")
+request.getAttribute("result")
+request.getAttribute("email")
+
+//from:: where Common logic used
+request.getAttribute("sessionTimeOut")
+
+//from:: where Common logic used & loginurl
+session.getAttribute("userLogin")
+
+//from:: loginurl
+session.getAttribute("email")
+session.getAttribute("ChatApp-userName")
+
+//from:: loginUserMsg & registerUserMsg
+request.getAttribute("myResponse")
+
+
+
+
+
+
+
+
+
+showSavedChaturl
+=================
+ses.getAttribute("anotherUser");
+
+req.setAttribute("chat", chat);//PersistentData
+
+
+
+
+
+
+
+
+storeChaturl
+=============
+ses.getAttribute("anotherUser");
+req.getParameter("message");
+
+req.setAttribute("msgInsertResult", msgInsertResult);
+
+//if msg in not valid as per business rules then 
+forward(chatWindowMain.jsp)	
+//else
+include(chatWindowMain.jsp)
+
+
+
+
+
+
+
+chatWindowMain.jsp
+===================
+http://localhost:3030/ChatAppWithDataBase/chatWindowMain.jsp?user=user2%40gmail.com
+               <% 
+               	// Some Logic if User Sends Msg (becuse at that time page"chatWindowMain.jsp" will reload through Form) 
+				
+         	      	  session.setAttribute("anotherUser",request.getParameter("user")); 
+         
+             	  out.println(session.getAttribute("anotherUser"));
+               %>
+
+	
+
+
+UserLogOut (userLogOut.jsp)
+==========
+
+ses.getAttribute("userLogin");//flag
+ses.getAttribute("email");//email
+ses.getAttribute("ChatApp-userName");//userName extract from email
+
+session.invalidate();
+request.setAttribute("sessionTimeOut", "logOut");
+
+forward("welcomepage.jsp")
+
+
+
+
+
+DashBoard
+==========
+
+ses.getAttribute("userLogin");//flag
+ses.getAttribute("email");//email
+ses.getAttribute("ChatApp-userName");//userName extract from email
+
+request.setAttribute("sessionTimeOut", "true"); [Conditions Apply]
+forward(welcomepage.jsp)
+
+
+include(listuserurl)
+request.getAttribute("listOfuser")
+
+
+
+
+
+
+
+
+
+
+Login
+======
+
+req.getParameter("email");
+req.getParameter("password");
+
+ses.setAttribute("userLogin","true");//flag
+ses.setAttribute("email",email);//email
+ses.setAttribute("ChatApp-userName", userName));//userName extract from email
+
+req.setAttribute("result", result);//persistentResult
+req.setAttribute("email", email);
+req.setAttribute("jspResponseFor", "LoginServlet");
+
+include(welcomepage.jsp)
+printWriter.close
+
+
+
+
+
+
+
+
+
+Registration
+=============
+
+req.getParameter("email");
+req.getParameter("password");
+
+request.getAttri("result", result);//persistableResult
+request.getAttri("email", email);
+request.getAttri("jspResponseFor", "RegisterServlet");
+
+include(registerUserMsg.jsp)
+
+request.setAttribute("myResponse", myResponse);
+
+printWriter.close
+
+registerUserMsg.jsp
+	

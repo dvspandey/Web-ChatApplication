@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>ChatAppWithDataBase</display-name>
+	<welcome-file-list>
+		<welcome-file>welcomePage.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>com.nt.service.LoginServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/loginurl</url-pattern>
+	</servlet-mapping>
+
+
+	<!--*********** DATABASE CONNECTION PROPERTIES *************** -->
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://remotemysql.com:3306/PyotPCH2wz</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dbuser</param-name>
+		<param-value>PyotPCH2wz</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dbpwd</param-name>
+		<param-value>X1k3KeU9wQ</param-value>
+	</context-param>
+	<!--*********** DATABASE CONNECTION PROPERTIES Ends *********** -->
+
+
+	<!--******************** DATABASE SQL Queries ****************** -->
+	<!--.................... ORACLE SQL Queries .................... -->
+	<context-param>
+		<description>ChatAppLoginDAO</description>
+		<param-name>oracle_NEW_USER_INSERT_QUERY</param-name>
+		<param-value>
+		INSERT INTO CHATAPP_LOGIN (EMAIL, PASSWORD, TIME_STAMP) VALUES(?,?,sysdate)
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ChatAppLoginDAO</description>
+		<param-name>oracle_USER_LOGIN_SELECT_QUERY</param-name>
+		<param-value>
+		SELECT EMAIL, PASSWORD FROM CHATAPP_LOGIN WHERE EMAIL = ?
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ListAllRegisteredUserServlet</description>
+		<param-name>oracle_SELECT_ALL_USER_QUERY</param-name>
+		<param-value>
+		SELECT EMAIL FROM CHATAPP_LOGIN
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ShowSavedChatServlet</description>
+		<param-name>oracle_SELECT_USERS_CHAT_QUERY</param-name>
+		<param-value>
+		SELECT MESSAGES, TO_CHAR(TIME_STAMP, 'DD-MON-YYYY HH24:MI:SS') AS TIME_STAMP, MSG_FROM, MSG_TO FROM CHATAPP_CHAT WHERE MSG_FROM IN (?, ?) AND MSG_TO IN (?, ?) ORDER BY TIME_STAMP ASC
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>StoreChatServlet</description>
+		<param-name>oracle_STORE_USERS_CHAT_QUERY</param-name>
+		<param-value>
+		INSERT INTO CHATAPP_CHAT (MESSAGES, TIME_STAMP, MSG_FROM, MSG_TO) VALUES (?, SYSDATE, ?, ?)
+		</param-value>
+	</context-param>
+	<!--................. ORACLE SQL Queries Ends .................. -->
+
+
+
+	<!--.................... MySQL SQL Queries ...................... -->
+	<context-param>
+		<description>ChatAppLoginDAO</description>
+		<param-name>mysql_NEW_USER_INSERT_QUERY</param-name>
+		<param-value>
+		INSERT INTO CHATAPP_LOGIN (EMAIL, PASSWORD, TIME_STAMP) VALUES(?,?,CONVERT_TZ(DATE_FORMAT(CURRENT_TIMESTAMP, '%Y-%m-%d %h:%i:%s'),'+00:00','+05:30'))
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ChatAppLoginDAO</description>
+		<param-name>mysql_USER_LOGIN_SELECT_QUERY</param-name>
+		<param-value>
+		SELECT EMAIL, PASSWORD FROM CHATAPP_LOGIN WHERE EMAIL = ?
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ListAllRegisteredUserServlet</description>
+		<param-name>mysql_SELECT_ALL_USER_QUERY</param-name>
+		<param-value>
+		SELECT EMAIL FROM CHATAPP_LOGIN
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>ShowSavedChatServlet</description>
+		<param-name>mysql_SELECT_USERS_CHAT_QUERY</param-name>
+		<param-value>
+		SELECT MESSAGES, TIME_STAMP, MSG_FROM, MSG_TO FROM CHATAPP_CHAT WHERE MSG_FROM IN (?, ?) AND MSG_TO IN (?, ?) ORDER BY TIME_STAMP ASC
+		</param-value>
+	</context-param>
+
+	<context-param>
+		<description>StoreChatServlet</description>
+		<param-name>mysql_STORE_USERS_CHAT_QUERY</param-name>
+		<param-value>
+		INSERT INTO CHATAPP_CHAT (MESSAGES, TIME_STAMP, MSG_FROM, MSG_TO) VALUES (?, CONVERT_TZ(DATE_FORMAT(CURRENT_TIMESTAMP, '%Y-%m-%d %h:%i:%s'),'+00:00','+05:30'), ?, ?)
+		</param-value>
+	</context-param>
+
+	<!--................. MySQL SQL Queries Ends ................... -->
+	<!--***************** DATABASE SQL Queries Ends ***************** -->
+
+
+
+
+
+</web-app>
