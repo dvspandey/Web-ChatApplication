@@ -1,8 +1,13 @@
-# Web-ChatApplication
-## Application with JSPs and Servlets
-.
-.
-.
+# Web-ChatApplication  [insertLoGoImage]
+### [JAVA Based WebApplication]
+- [x] Web-ChatApplication developer [@dvspandey](https://github.com/dvspandey)
+- [x] Web-ChatApplication Deployment [Link](https://web-chatapp-dvs.herokuapp.com/).
+- [x] Web-ChatApplication [Flow Chart]() 
+
+### Application with JSPs and Servlets
+
+
+## Objective
  **It provides client application which runs on the users’ desktop and server application which runs on any machine on the network. To start chatting our client should get connected to a server where they can do private chatting with registered users.**
  
  
@@ -123,3 +128,14 @@ The total number of tables in the database that was identified to build our syst
      - SqlQuerySupplier class give query to perform Operations to ChatAppLoginDAO class
 
 ## JSP Files (JAVA SERVER PAGES)
+- welcomePage.jsp
+  - loginUserMsg.jsp
+  - registerUserMsg.jsp
+- userDashboard.jsp
+  - userLogOut.jsp
+- chatWindowMain.jsp
+  - messagesScreen.jsp
+
+
+## Conclusion
+This project is a chat application where you can chat with registerd friends. You will have to ensure that the tomcat9 server and the apache server are connected and they both should be open while running the project. This project covers many important fundamental aspect of Java language form OOPs concepts to the web development concepts.
