@@ -1,5 +1,9 @@
 # Web-ChatApplication  
 ### [JAVA Based WebApplication]     
+                                              
+- [x] Web-ChatApplication developer [@dvspandey](https://github.com/dvspandey)
+- [x] Web-ChatApplication Deployment [Link](https://web-chatapp-dvs.herokuapp.com/).
+- [x] Web-ChatApplication [Flow Chart](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png) 
 
 <div style="text-align:center">
     <table>
@@ -13,10 +17,6 @@
 </div>
 
 <!-- ![alt text](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png?raw=true) -->
-                                              
-- [x] Web-ChatApplication developer [@dvspandey](https://github.com/dvspandey)
-- [x] Web-ChatApplication Deployment [Link](https://web-chatapp-dvs.herokuapp.com/).
-- [x] Web-ChatApplication [Flow Chart](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png) 
 
 ### Application with JSPs and Servlets
 
