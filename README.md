@@ -1,8 +1,22 @@
-# Web-ChatApplication  [insertLoGoImage]
-### [JAVA Based WebApplication]
+# Web-ChatApplication  
+### [JAVA Based WebApplication]     
+
+<div style="text-align:center">
+    <table>
+     <tr>
+      <td align=center> LOGO </td>
+     </tr> 
+     <tr>
+     <td> <img src="https://github.com/dvspandey/Web-ChatApplication/blob/master/Code/WebContent/img/logo.jfif" /> </td>
+     </tr>
+    </table>
+</div>
+
+<!-- ![alt text](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png?raw=true) -->
+                                              
 - [x] Web-ChatApplication developer [@dvspandey](https://github.com/dvspandey)
 - [x] Web-ChatApplication Deployment [Link](https://web-chatapp-dvs.herokuapp.com/).
-- [x] Web-ChatApplication [Flow Chart]() 
+- [x] Web-ChatApplication [Flow Chart](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png) 
 
 ### Application with JSPs and Servlets
 
