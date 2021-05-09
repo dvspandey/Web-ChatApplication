@@ -1,9 +1,10 @@
-# Web-ChatApplication  :sunflower:
+# Web-ChatApplication  `v1.0` :sunflower: 
 ### [JAVA Based WebApplication]    :100: 	:vertical_traffic_light:
                                               
 - [x] Web-ChatApplication developer [@dvspandey](https://github.com/dvspandey) 	:sunglasses: 
 - [x] Web-ChatApplication Deployment [Link](https://web-chatapp-dvs.herokuapp.com/). :clap: :horse_racing:
 - [x] Web-ChatApplication [Flow Chart](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png) :+1:
+
 
 <div style="text-align:center">
     <table>
@@ -18,7 +19,7 @@
 
 <!-- ![alt text](https://github.com/dvspandey/Web-ChatApplication/blob/master/Document/PersistenceFlow.png?raw=true) -->
 
-### Application with JSPs and Servlets 
+### Application with `JSPs` and `Servlets` 
 
 
 ## Objective :eyes:
