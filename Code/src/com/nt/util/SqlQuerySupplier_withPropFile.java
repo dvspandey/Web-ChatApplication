@@ -16,6 +16,31 @@
  * FrameWorks
  * 
  * So i'm take help of ServletContext Object
+ * 
+ * SOLVED PROBLEM
+ * ==============
+ * 
+ * By getServletContext().getResourceAsStream("path") ---> returns InputStream
+===================================================
+
+static Properties props;
+props = new Properties();
+props.load(getServletContext().getResourceAsStream("/WEB-INF/classes/com/nt/commons/sql.properties"));
+System.out.println(props.getProperty("key"));
+
+
+By getServletContext().getRealPath("path") ----> returns String
+==========================================
+
+static Properties props;
+//locate properties file
+String path = getServletContext().getRealPath("/WEB-INF/classes/com/nt/commons/sql.properties");
+//Convert String to InputStream
+InputStream is = new FileInputStream(path);
+props = new Properties();
+props.load(is);
+System.out.println(props.getProperty("key"));
+
  * */
 
 
@@ -33,11 +58,12 @@ public class SqlQuerySupplier_withPropFile {
 	static String dataBase = "mysql";
 	
 	static Properties props;
+	static String path = "";//getServletContext().getRealPath("/WEB-INF/classes/com/nt/commons/sqlquery.properties");
 	static {
 			
 		try {
 			//locate properties file
-			InputStream is = new FileInputStream("src/com/nt/commons/sqlquery.properties");
+			InputStream is = new FileInputStream(path);
 			//create Dependent class obj
 			props = new Properties();
 			props.load(is);
