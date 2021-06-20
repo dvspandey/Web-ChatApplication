@@ -82,7 +82,8 @@ The total number of tables in the database that was identified to build our syst
 ## web.xml :elephant:
 * Here i use web.xml configuration file as my Properties file.
   - Because we can't use direct Properties file in our webapplication as per my knowledge But it is possible in Standalone java applications 
-  - using **java.util.Properties** which helps to read properies file value because it is subclass of hashtabe so it contains keys and values pair
+    - `Now It is possible to locate .properties file through Servlet Check Closed Issues` [Click-Me](https://github.com/dvspandey/Web-ChatApplication/issues/1#issue-890667159) 
+  - using **java.util.Properties** which helps to read properies file value because it is subclass of hashtable so it contains keys and values pair
 * web.xml is using for configur **welcomePage.jsp** as my welcome file
 * web.xml is using to configure **LoginServlet.java**  mapping with url and enable LOAD-ON-STARTUP because at this time i don't know with Annotations to enable.
 * web.xml contains JDBC related properties into **Servlet-Context** parameter to access into whole webapplication, | give reusability of code | esay to modification 
